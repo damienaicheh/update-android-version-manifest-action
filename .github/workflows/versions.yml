@@ -1,0 +1,44 @@
+name: versions
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**.md'
+  push:
+    branches:
+      - main
+      - releases/*
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  local-version:
+    runs-on: ubuntu-latest
+    name: Update AndroidManifest.xml
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Update AndroidManifest.xml
+        uses: ./
+        with:
+          android-manifest-path: './samples/AndroidManifest.xml'
+          version-code: 2
+          version-name: '2.0'
+          print-file: false
+
+      - name: Update AndroidManifest-1.xml
+        uses: ./
+        with:
+          android-manifest-path: './samples/AndroidManifest-1.xml'
+          version-code: 3
+          version-name: '3.0'
+          print-file: true
+
+      - name: Update AndroidManifest-2.xml
+        uses: ./
+        with:
+          android-manifest-path: './samples/AndroidManifest-2.xml'
+          version-code: 5
+          version-name: '123.4'
+          print-file: true

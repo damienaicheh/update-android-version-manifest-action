@@ -1,0 +1,22 @@
+name: 'Update Android version Manifest action'
+description: 'Update the AndroidManifest.xml file'
+author: 'damienaicheh'
+inputs:
+  android-manifest-path:
+    description: 'Relative path for the AndroidManifest.xml file.'
+    required: true
+  version-code:
+    description: 'Version code value'
+    required: true
+  version-name:
+    description: 'Version name'
+    required: true
+  print-file:
+    description: 'Output the AndroidManifest.xml file in console'
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'file'
+  color: 'green'

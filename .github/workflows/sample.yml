@@ -1,0 +1,28 @@
+name: sample
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**.md'
+  push:
+    branches:
+      - main
+      - releases/*
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    name: Update AndroidManifest.xml
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Update AndroidManifest-2.xml
+        uses: damienaicheh/update-android-version-manifest-action@v1.0.0
+        with:
+          android-manifest-path: './samples/AndroidManifest-2.xml'
+          version-code: 5
+          version-name: '123.4'
+          print-file: true

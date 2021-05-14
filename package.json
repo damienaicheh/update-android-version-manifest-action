@@ -1,0 +1,20 @@
+{
+  "name": "update-android-version-manifest-action",
+  "version": "1.0.0",
+  "description": "This action update the `versionCode` and `versionName` properties of the AndroidManifest.xml file for your Android projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package-action": "tsc && ncc build lib/index.js --license licenses.txt"
+  },
+  "author": "damienaicheh",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.7",
+    "@actions/exec": "^1.0.4",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.41"
+  }
+}
