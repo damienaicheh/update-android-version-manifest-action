@@ -48,7 +48,11 @@ async function main(): Promise<void> {
 
         core.info(`AndroidManifest.xml updated successfully with versionCode: ${versionCode} and versionName: ${versionName}`);
     } catch (error) {
-        core.setFailed(error.message);
+        if (error instanceof Error) {
+            core.setFailed(error.message);
+        } else {
+            core.setFailed(`Unhandled error: ${error}`);
+        }
     }
 }
 
