@@ -1,6 +1,6 @@
 {
   "name": "update-android-version-manifest-action",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This action update the `versionCode` and `versionName` properties of the AndroidManifest.xml file for your Android projects.",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,13 @@
   "author": "damienaicheh",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.2.7",
-    "@actions/exec": "^1.0.4",
+    "@actions/core": "^1.10.1",
+    "@actions/exec": "^1.1.1",
     "fs": "0.0.1-security"
   },
   "devDependencies": {
-    "@types/node": "^14.14.41"
+    "@types/node": "^16.0.0",
+    "@vercel/ncc": "^0.38.0",
+    "typescript": "^5.2.2"
   }
 }
