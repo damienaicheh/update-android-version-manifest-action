@@ -24,7 +24,7 @@ Output the AndroidManifest.xml file in console before and after update.
 
 ```yaml
 - name: Update AndroidManifest.xml
-  uses: damienaicheh/update-android-version-manifest-action@v1.0.0
+  uses: damienaicheh/update-android-version-manifest-action@v1.1.0
   with:
     android-manifest-path: './path_to_your/AndroidManifest.xml'
     version-code: 2
